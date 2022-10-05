@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_commerce/sabitler/ext.dart';
 import 'package:flutter_commerce/servisler/anasayfa.dart';
+import 'package:flutter_commerce/widget/bottomBar.dart';
 
 class Anasayfa extends StatefulWidget {
   const Anasayfa({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _AnasayfaState extends State<Anasayfa> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: BottomBar(),
         appBar: buildAppBar(),
         body: SingleChildScrollView(
           child: Container(
@@ -227,10 +229,11 @@ class _AnasayfaState extends State<Anasayfa> {
       padding: EdgeInsets.only(top: 20, bottom: 20, left: 20),
       child: Container(
         height: 152,
-        child: ListView(
+        child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          children: [
-            Padding(
+          itemCount: homeSliders.length,
+          itemBuilder: (context,index){
+            return Padding(
               padding: const EdgeInsets.only(right: 15),
               child: AspectRatio(
                 aspectRatio: 4 / 2.25,
@@ -241,13 +244,13 @@ class _AnasayfaState extends State<Anasayfa> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: 21, left: 16),
-                        child: Text("January Offer",
+                        child: Text(homeSliders[index]['title'],
                             style: TextStyle(
                                 fontSize: 28, fontWeight: FontWeight.w500)),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 17, left: 16),
-                        child: Text("Get cashback up to 30% for all transaction",
+                        child: Text(homeSliders[index]['subtitle'],
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w500)),
                       ),
@@ -258,37 +261,8 @@ class _AnasayfaState extends State<Anasayfa> {
                       borderRadius: BorderRadius.circular(10)),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: AspectRatio(
-                aspectRatio: 4 / 2.25,
-                child: Container(
-                  height: 152,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 21, left: 16),
-                        child: Text("Safety Standards",
-                            style: TextStyle(
-                                fontSize: 28, fontWeight: FontWeight.w500)),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 17, left: 16),
-                        child: Text("Keeping you and our partners safe amid Covid -19",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500)),
-                      ),
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                      color: HexColor("FBA346"),
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
@@ -358,3 +332,37 @@ class _AnasayfaState extends State<Anasayfa> {
     );
   }
 }
+
+
+/*
+            Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: AspectRatio(
+                aspectRatio: 4 / 2.25,
+                child: Container(
+                  height: 152,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 21, left: 16),
+                        child: Text("January Offer",
+                            style: TextStyle(
+                                fontSize: 28, fontWeight: FontWeight.w500)),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 17, left: 16),
+                        child: Text("Get cashback up to 30% for all transaction",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.w500)),
+                      ),
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                      color: HexColor("FBA346"),
+                      borderRadius: BorderRadius.circular(10)),
+                ),
+              ),
+            ),
+
+ */
