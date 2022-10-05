@@ -20,20 +20,20 @@ class _BottomBarState extends State<BottomBar> {
       unselectedFontSize: 14,
       items: [
         BottomNavigationBarItem(
-          label: "Favorites",
-          icon: Icon(Icons.favorite),
+          label: "Explore",
+          icon: Icon(Icons.search),
         ),
         BottomNavigationBarItem(
-          label: "Music",
-          icon: Icon(Icons.music_note),
+          label: "Orders",
+          icon: Icon(Icons.pending_actions),
         ),
         BottomNavigationBarItem(
-          label: "Places",
-          icon: Icon(Icons.location_on),
+          label: "Cart",
+          icon: Icon(Icons.shopping_cart),
         ),
         BottomNavigationBarItem(
-          label: "News",
-          icon: Icon(Icons.library_books),
+          label: "Profile",
+          icon: Icon(Icons.person),
         ),
       ],
       onTap: (value) {
