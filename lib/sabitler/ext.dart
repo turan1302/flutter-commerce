@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 const String appbar_renk = "ffffff";
 const String yazi_renk = "535353";
 

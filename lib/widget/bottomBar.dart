@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_commerce/sabitler/ext.dart';
+import 'package:flutter_commerce/sayfalar/kullanici/Profil.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -36,8 +37,10 @@ class _BottomBarState extends State<BottomBar> {
           icon: Icon(Icons.person),
         ),
       ],
-      onTap: (value) {
-        // Respond to item press.
+      onTap: (i) {
+        if(i==3){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Profil()));
+        }
       },
     );
   }

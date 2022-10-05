@@ -50,7 +50,7 @@ class _AnasayfaState extends State<Anasayfa> {
                         Text(
                           "Featured Products",
                           style: TextStyle(
-                              color: HexColor("535353"),
+                              color: HexColor(yazi_renk),
                               fontSize: 18,
                               fontWeight: FontWeight.w500),
                         ),
@@ -99,7 +99,7 @@ class _AnasayfaState extends State<Anasayfa> {
                                                 SizedBox(
                                                   height: 6,
                                                 ),
-                                                Text(homeFeatured[index]['price'].toString()+" ₺"),
+                                                Text(homeFeatured[index]['price'].toString()+" ₺",style: TextStyle(color: HexColor(yazi_renk))),
                                                 SizedBox(
                                                   height: 13,
                                                 ),
@@ -279,7 +279,7 @@ class _AnasayfaState extends State<Anasayfa> {
             children: [
               Text("Categories",
                   style: TextStyle(
-                      color: HexColor("535353"),
+                      color: HexColor(yazi_renk),
                       fontSize: 18,
                       fontWeight: FontWeight.w500)),
               Text("View All",
