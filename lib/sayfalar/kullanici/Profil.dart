@@ -15,19 +15,7 @@ class _ProfilState extends State<Profil> {
     return SafeArea(
       child: Scaffold(
         bottomNavigationBar: BottomBar(),
-        appBar: AppBar(
-          leading: GestureDetector(
-            // LEADING KISMINI BU SEKILDE OZELLESTIRDIK
-            child: Icon(Icons.arrow_back_ios, color: HexColor("535353")),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          backgroundColor: HexColor(appbar_renk),
-          elevation: 0,
-          centerTitle: true,
-          title: Text("Profile", style: TextStyle(color: HexColor("535353"))),
-        ),
+        appBar: buildAppBar(context),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
@@ -61,6 +49,23 @@ class _ProfilState extends State<Profil> {
         ),
       ),
     );
+  }
+
+  /** APPBAR KISMI **/
+  AppBar buildAppBar(BuildContext context) {
+    return AppBar(
+        leading: GestureDetector(
+          // LEADING KISMINI BU SEKILDE OZELLESTIRDIK
+          child: Icon(Icons.arrow_back_ios, color: HexColor("535353")),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        backgroundColor: HexColor(appbar_renk),
+        elevation: 0,
+        centerTitle: true,
+        title: Text("Profile", style: TextStyle(color: HexColor("535353"))),
+      );
   }
 
   /** PROFIL FOTOGRAFI VE NAME KISMI **/

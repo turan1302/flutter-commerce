@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_commerce/sabitler/ext.dart';
 import 'package:flutter_commerce/sayfalar/Anasayfa.dart';
+import 'package:flutter_commerce/sayfalar/cart/Cart.dart';
 import 'package:flutter_commerce/sayfalar/kullanici/Profil.dart';
 
 class BottomBar extends StatefulWidget {
@@ -41,6 +42,9 @@ class _BottomBarState extends State<BottomBar> {
       onTap: (i) {
         if(i==0){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Anasayfa()));
+        }
+        else if(i==2){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));
         }
         else{
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Profil()));
