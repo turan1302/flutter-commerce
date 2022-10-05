@@ -3,6 +3,7 @@ import 'package:flutter_commerce/sabitler/ext.dart';
 import 'package:flutter_commerce/sayfalar/Anasayfa.dart';
 import 'package:flutter_commerce/sayfalar/cart/Cart.dart';
 import 'package:flutter_commerce/sayfalar/kullanici/Profil.dart';
+import 'package:flutter_commerce/sayfalar/order/Order.dart';
 import 'package:get/get.dart';
 
 import '../controller/generalController.dart';
@@ -51,6 +52,9 @@ class _BottomBarState extends State<BottomBar> {
         generalController.menu.value = i;
         if(i==0){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Anasayfa()));
+        }
+        else if(i==1){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Order()));
         }
         else if(i==2){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));

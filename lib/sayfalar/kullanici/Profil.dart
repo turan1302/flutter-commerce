@@ -56,7 +56,7 @@ class _ProfilState extends State<Profil> {
     return AppBar(
         leading: GestureDetector(
           // LEADING KISMINI BU SEKILDE OZELLESTIRDIK
-          child: Icon(Icons.arrow_back_ios, color: HexColor("535353")),
+          child: Icon(Icons.arrow_back_ios, color: HexColor(yazi_renk)),
           onTap: () {
             Navigator.pop(context);
           },
@@ -64,7 +64,7 @@ class _ProfilState extends State<Profil> {
         backgroundColor: HexColor(appbar_renk),
         elevation: 0,
         centerTitle: true,
-        title: Text("Profile", style: TextStyle(color: HexColor("535353"))),
+        title: Text("Profile", style: TextStyle(color: HexColor(yazi_renk))),
       );
   }
 
