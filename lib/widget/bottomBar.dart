@@ -3,6 +3,10 @@ import 'package:flutter_commerce/sabitler/ext.dart';
 import 'package:flutter_commerce/sayfalar/Anasayfa.dart';
 import 'package:flutter_commerce/sayfalar/cart/Cart.dart';
 import 'package:flutter_commerce/sayfalar/kullanici/Profil.dart';
+import 'package:get/get.dart';
+
+import '../controller/generalController.dart';
+
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -12,9 +16,13 @@ class BottomBar extends StatefulWidget {
 }
 
 class _BottomBarState extends State<BottomBar> {
+
+  GeneralController generalController = Get.find<GeneralController>();
+
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
+    return Obx(() => BottomNavigationBar(
+      currentIndex: generalController.menu.value,
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       selectedItemColor: HexColor("FBA346"),
@@ -40,6 +48,7 @@ class _BottomBarState extends State<BottomBar> {
         ),
       ],
       onTap: (i) {
+        generalController.menu.value = i;
         if(i==0){
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Anasayfa()));
         }
@@ -50,6 +59,6 @@ class _BottomBarState extends State<BottomBar> {
           Navigator.push(context, MaterialPageRoute(builder: (context)=>Profil()));
         }
       },
-    );
+    ));
   }
 }

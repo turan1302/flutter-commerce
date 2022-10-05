@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_commerce/controller/generalController.dart';
 import 'package:flutter_commerce/sabitler/ext.dart';
 import 'package:flutter_commerce/servisler/anasayfa.dart';
 import 'package:flutter_commerce/widget/bottomBar.dart';
+import 'package:get/get.dart';
 
 class Anasayfa extends StatefulWidget {
   const Anasayfa({Key? key}) : super(key: key);
@@ -11,6 +13,9 @@ class Anasayfa extends StatefulWidget {
 }
 
 class _AnasayfaState extends State<Anasayfa> {
+
+  GeneralController generalController = Get.put(GeneralController());
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
